@@ -13,6 +13,8 @@ import com.crudlover.api.dto.CarDTO;
 import com.crudlover.api.model.Car;
 import com.crudlover.api.repository.CarRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping
 public class CarController {
@@ -25,7 +27,7 @@ public class CarController {
     }
 
     @PostMapping
-    public void create(@RequestBody CarDTO req) {
+    public void create(@RequestBody @Valid CarDTO req) {
         repository.save(new Car(req));
     }
 }

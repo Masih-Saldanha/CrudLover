@@ -1,5 +1,7 @@
 package com.crudlover.api.model;
 
+import java.util.Date;
+
 import com.crudlover.api.dto.CarDTO;
 
 import jakarta.persistence.Column;
@@ -29,11 +31,15 @@ public class Car {
     @Column(length = 20, nullable = false)
     private String modelo;
 
+    @Column(length = 20, nullable = false)
     private String fabricante;
 
-    private String dataFabricacao;
+    @Column(length = 20, nullable = false)
+    private Date dataFabricacao;
 
+    @Column(nullable = false)
     private Double valor;
 
+    @Column(nullable = false)
     private Number anoModelo;
 }
